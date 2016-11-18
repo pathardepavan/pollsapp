@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Polls Application</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Polls App</h3>
+    </div>
+
+    <div class="jumbotron" style="text-align: left">
+        <h3>Polls App Questions</h3>
+
+            <h4>{{question.question_text}}</h4>
+        <!--<form action="/polls/{{question.id}}/vote/" method="post">-->
+            <!--{%csrf_token%}-->
+            {% for choice in question.choice_set.all %}
+                <input type="radio" name="choice" value="{{choice.id}}">{{choice}}  --> {{choice.votes}}<br />
+            {% endfor %}
+            <!--<input type="submit" class="btn-default"/>-->
+
+        <!--</form>-->
+
+
+    </div>
+
+
+    <footer class="footer">
+        <p>&copy; 2016 Vidya, Inc.</p>
+    </footer>
+
+</div>
+<!-- /container -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
